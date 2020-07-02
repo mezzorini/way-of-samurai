@@ -3,7 +3,7 @@ import classes from './MyPosts.module.css';
 import Post from "./Post/Post";
 
 
-const MyPosts = () => {
+export function MyPosts () {
     return (
         <div>
             my posts
@@ -21,5 +21,3 @@ const MyPosts = () => {
         </div>
     );
 }
-
-export default MyPosts

@@ -6,7 +6,7 @@ type PropsItemType = {
     likeCounter: number,
 }
 
-const Post = (props: PropsItemType) => {
+const Post: React.FC<PropsItemType> = (props) => {
     return (
         <div>
             <div className={classes.item}>
