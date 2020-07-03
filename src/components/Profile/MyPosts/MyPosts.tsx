@@ -2,22 +2,38 @@ import React from "react";
 import classes from './MyPosts.module.css';
 import Post from "./Post/Post";
 
+type postsDataType = {
+    id: number,
+    message: string,
+    likeCounter: number
+}
 
-export function MyPosts () {
+export function MyPosts() {
+
+    //data
+    let posts: Array<postsDataType> = [
+        {id: 1, message: 'Hi!!!', likeCounter: 12 },
+        {id: 2, message: "It's my first post!", likeCounter: 10 },
+        {id: 3, message: "How a u dudes?", likeCounter: 7 }
+    ]
+
+    let postsElements = posts.map((p) => <Post message={p.message} likeCounter={p.likeCounter}/>);
+
     return (
-        <div>
-            my posts
+        <div className={classes.PostsBlock}>
+            <h3>my posts</h3>
             <div>
-                <textarea>Add text</textarea>
-                <button>Add post</button>
-                <button>Remove</button>
+                <div>
+                    <textarea>Add text</textarea>
+                </div>
+                <div>
+                    <button className={classes.ButtonStyle}>Add post</button>
+                    <button className={classes.ButtonStyle}>Remove</button>
+                </div>
             </div>
-            <Post
-                message="Hi, gow are u?"
-                likeCounter={3}/>
-            <Post
-                message="It's my first post"
-                likeCounter={6}/>
+            <div className={classes.PostsStyle}>
+                {postsElements}
+            </div>
         </div>
     );
 }
