@@ -14,7 +14,18 @@
 }
 
 .dialog {
-    padding: 10px;
+    padding: 15px;
+    /*background-color: blueviolet;*/
+    /*border: 1px solid black;*/
+    display: grid;
+    grid-template-columns: 1fr 5fr;
+}
+
+.dialog img {
+    width: 30px;
+    height: 30px;
+    border-radius: 25px;
+    border: 1px solid black;
 }
 
 .messages {
@@ -23,5 +34,9 @@
 
 .message {
     padding: 10px;
+}
+
+.navlink {
+    padding: 5px;
 }
 
